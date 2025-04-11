@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo-page.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo" width="20%">
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hello, there! I'm <span class="name">Giulia</span>.<span class="blinking-line">|</span></h1>
+        </div>
+    </section>
+
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I’m Giulia, <span class="test">an aspiring computer scientist with a focus on finance and data
+                    analysis.</span></p>
+            <p>I completed my studies in Systems Development at SENAI, where I developed problem-solving skills and a
+                strong passion for creating innovative solutions. Throughout my academic journey, I’ve achieved
+                excellent results in programming challenges, outstanding performance in data-related courses, and a
+                constant commitment to learning. My goal is to combine my love for technology with my ambition to
+                analyze and optimize financial systems, aiming to make a meaningful impact in the technology and finance
+                industries.</p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+
+            <div class="button-container">
+                <button id="time-prev" disabled>Back</button>
+                <button id="time-next">Next</button>
+            </div>
+
+            <div class="time-container">
+                <div class="time-timeline-container">
+                    <div class="time-progress-bar">
+                        <div class="time-progress"></div>
+                        <div class="time-milestone time-active"></div>
+                        <div class="time-milestone"></div>
+                        <div class="time-milestone"></div>
+                        <div class="time-milestone"></div>
+                    </div>
+                    <div class="content2">
+                        <div class="time-box"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <section id="languages">
+            <h2>Language Proficiency</h2>
+            <div class="languages-container" id="languages">
+                <!-- Portuguese Circle -->
+                <div class="skill" data-percent="100">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="language">Portuguese</div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <!-- English Circle -->
+                <div class="skill" data-percent="100">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="language">English</div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <!-- French Circle -->
+                <div class="skill" data-percent="20">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="language">French</div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>A selection of personal and collaborative projects that demonstrate my skills in development, design, and
+                creative problem-solving.</p>
+        </section>
+
+    </div>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="img/thumbnails/fox-finance.png" class="project-image" alt="Main Project 1">
+            <div class="project-content">
+                <h3 class="project-title">Fox Finance</h3>
+                <p class="project-description">Fox Finance is a smart platform that helps you track, manage, and
+                    grow your finances with confidence.</p>
+                <a href="https://giu-g.github.io/foxfinance/" class="project-button" target="_blank">Visit</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="img/thumbnails/yellow-september.png" class="project-image" alt="Main Project 2">
+            <div class="project-content">
+                <h3 class="project-title">Mental Health</h3>
+                <p class="project-description">A website dedicated to raising awareness for mental health and
+                    suicide prevention, encouraging support, empathy, and the value of life.</p>
+                <a href="https://giu-g.github.io/setembroAmarelo/" class="project-button" target="_blank">Visit</a>
+            </div>
+        </div>
+    </div>
+
+    <a id="project-button" href="projects.html" class="project-button" target="_blank">See other Projects →</a>
+
+    <div class="scroolingbar-container">
+        <div class="scroolingbar-text">
+            Just a little something scrolling by...
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Peek-A-Boo!
+        </div>
+    </div>
+
+    <footer>
+        <p class="contact-title">Let's get in touch.</p>
+
+        <form class="footer-form" onsubmit="sendEmail(event)">
+            <input type="email" id="emailInput" placeholder="Your email" required />
+            <button type="submit">Send</button>
+        </form>
+
+        <hr style="height:1px;border-width:0;color:gray;background-color:gray; margin-bottom: 6%;">
+
+        <div class="social-links">
+            <a href="https://github.com/giu-g" target="_blank">GitHub</a> |
+            <a href="#" target="_blank">g.schiavetto18@gmail.com</a>
+        </div>
+
+        <p>© 2025 Giulia Schiavetto's Portfolio. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
