@@ -22,12 +22,15 @@ body {
 /* Navigation Bar */
 .navbar {
     background-color: black;
-    padding: 1.8% 5%;
+    padding: 0 5%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 10;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px; /* Consistent height */
 }
 
 .navbar ul {
@@ -50,26 +53,32 @@ body {
     color: #ff007b;
 }
 
+/* Responsive Nav */
 @media (max-width: 768px) {
-    .navbar ul li a {
-        font-size: 14px;
+    .navbar ul {
+        display: none; /* hides menu on small screens */
     }
 
     .logo img {
-        width: 15%;
+        height: 45px;
+        width: auto;
+    }
+
+    .navbar {
+        height: 60px;
     }
 }
 
 @media (max-width: 480px) {
-    .navbar ul li a {
-        font-size: 12px;
+    .logo img {
+        height: 40px;
+        width: auto;
     }
 
-    .logo img {
-        width: 12%;
+    .navbar {
+        height: 55px;
     }
 }
-
 
 /* Hero Section */
 .hero {
@@ -150,7 +159,6 @@ body {
     display: inline-block;
     width: 1px;
     height: 2rem;
-    /* Adjust height to match the text size */
     animation: blink 0.8s infinite step-start;
 }
 
@@ -166,11 +174,9 @@ body {
 }
 
 /* Left-Aligned Logo */
-.logo {
-    position: absolute;
-    height: auto;
-    margin-top: 0%;
-    margin-bottom: 5%;
+.logo img {
+    height: 30px;
+    width: auto;
 }
 
 /* Languages Section */
@@ -438,11 +444,13 @@ button {
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    color: #000000;
 }
 
 button:disabled {
     background: #555;
     cursor: not-allowed;
+    color: #444;
 }
 
 .time-container {
