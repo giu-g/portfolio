@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo-page.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .logo {
+            position: absolute;
+            height: 20%;
+            margin-top: 20px;
+            margin-bottom: 5%;
+            padding: 0%;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: black;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-bottom: 1%;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff007b;
+        }
+
+        .content {
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 2rem;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 4rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            color: #ffffff;
+        }
+
+        .section-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                justify-content: center;
+            }
+        }
+
+
+        .project-card {
+            background-color: #000000;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1rem;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-button {
+            background-color: #ff007b;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-button:hover {
+            background-color: #ff58a9;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        footer a {
+            color: #ff007b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 50px 20px 40px;
+            text-align: center;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .contact-title {
+            color: rgb(255, 255, 255);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .footer-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+        .footer-form input {
+            padding: 10px 14px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            width: 250px;
+        }
+
+        .footer-form button {
+            padding: 10px 110px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff007b;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-form button:hover {
+            background-color: #e6006f;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .social-links a {
+            color: #ff007b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .scroolingbar-container {
+            background-color: #ff007b;
+            width: 100%;
+            height: 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroolingbar-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroolingbar-scroll-left 13s linear infinite;
+            padding-left: 100%;
+            line-height: 2rem;
+        }
+
+        @keyframes scroolingbar-scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo" width="20%">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>My Project Showcase</h1>
+
+        <!-- MAIN PROJECTS -->
+        <section>
+            <h2 class="section-title">Main Projects</h2>
+            <p class="section-description">These are the most complex projects I've worked on so far.</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="img/thumbnails/fox-finance.png" class="project-image" alt="Main Project 1">
+                    <div class="project-content">
+                        <h3 class="project-title">Fox Finance</h3>
+                        <p class="project-description">Fox Finance is a smart platform that helps you track, manage, and
+                            grow your finances with confidence.</p>
+                        <a href="https://giu-g.github.io/foxfinance/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/thumbnails/bill-id.png" class="project-image" alt="Main Project 2">
+                    <div class="project-content">
+                        <h3 class="project-title">Bill-ID</h3>
+                        <p class="project-description">Helping blind and visually impaired users recognize banknotes.
+                        </p>
+                        <a href="https://giu-g.github.io/bill-id/" class="project-button"
+                            target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/thumbnails/yellow-september.png" class="project-image" alt="Main Project 2">
+                    <div class="project-content">
+                        <h3 class="project-title">Mental Health</h3>
+                        <p class="project-description">A website dedicated to raising awareness for mental health and
+                            suicide prevention, encouraging support, empathy, and the value of life.</p>
+                        <a href="https://giu-g.github.io/setembroAmarelo/" class="project-button"
+                            target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CSS ART -->
+        <section>
+            <h2 class="section-title">CSS Art</h2>
+            <p class="section-description">Creative projects where I drew with pure CSS, no images used.</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./img/thumbnails/pokemon-trio.png" class="project-image" alt="CSS Art 1">
+                    <div class="project-content">
+                        <h3 class="project-title">Pokémon Trio</h3>
+                        <p class="project-description">A CSS design featuring Charmander, Squirtle, and Bulbasaur with a
+                            rotating Pokéball hovering above them.</p>
+                        <a href="https://giu-g.github.io/poke_desafio/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="./img/thumbnails/android-love.png" class="project-image" alt="CSS Art 2">
+                    <div class="project-content">
+                        <h3 class="project-title">Android Love</h3>
+                        <p class="project-description">Two Android robots side by side that hold hands when you hover
+                            over
+                            them.</p>
+                        <a href="https://giu-g.github.io/android/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH METHODS -->
+        <section>
+            <h2 class="section-title">Search Tools</h2>
+            <p class="section-description">Two interactive tools to explore Zodiac signs and their corresponding
+                Cavaleiros
+                do Zodíaco (Knights of the Zodiac).</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./img/thumbnails/zodiac-1.png" class="project-image" alt="Search 1">
+                    <div class="project-content">
+                        <h3 class="project-title">Sign to Knight</h3>
+                        <p class="project-description">Enter a Zodiac sign and discover the matching Cavaleiro do
+                            Zodíaco.
+                        </p>
+                        <a href="https://giu-g.github.io/as-12-casas-do-zodiaco/" class="project-button"
+                            target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="./img/thumbnails/zodiac-2.png" class="project-image" alt="Search 2">
+                    <div class="project-content">
+                        <h3 class="project-title">Birthday to Sign</h3>
+                        <p class="project-description">Input your birth month and day to find your Zodiac sign.</p>
+                        <a href="https://giu-g.github.io/as-12-casas-do-zodiaco-v2/" class="project-button"
+                            target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADDING AUDIO -->
+        <section>
+            <h2 class="section-title">Mini Games</h2>
+            <p class="section-description">Jump into a world of code-powered games and playful experiments!</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./img/thumbnails/pokemon-challenge.png" class="project-image" alt="Audio Project">
+                    <div class="project-content">
+                        <h3 class="project-title">Guess That Pokémon!</h3>
+                        <p class="project-description">Drag the Pokémon to its shadow. Get it right and move on — gotta
+                            catch ’em all!</p>
+                        <a href="https://giu-g.github.io/dxdd/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADDING AUDIO -->
+        <section>
+            <h2 class="section-title">Adding Audio</h2>
+            <p class="section-description">Exploring how to integrate audio into web interactions.</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./img/thumbnails/barbie-movie.png" class="project-image" alt="Audio Project">
+                    <div class="project-content">
+                        <h3 class="project-title">Barbie Sound Poster</h3>
+                        <p class="project-description">A Barbie movie poster that plays a themed song when you click on
+                            the
+                            speaker icon.</p>
+                        <a href="https://giu-g.github.io/barbie-filme/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPERADORES LÓGICOS -->
+        <section>
+            <h2 class="section-title">Exploring Conditional Logic</h2>
+            <p class="section-description">This section has simple websites that show how <b>if</b>, <b>else if</b>, and
+                <b>else</b> work in real situations.
+            </p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./img/thumbnails/dxd-3.png" class="project-image" alt="Logic 1">
+                    <div class="project-content">
+                        <h3 class="project-title">Sports Scenarios</h3>
+                        <p class="project-description">Apply logical and relational operators in practical examples
+                            drawn
+                            from real-life sports situations.</p>
+                        <a href="https://giu-g.github.io/dx3/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="./img/thumbnails/dxd-2.png" class="project-image" alt="Logic 2">
+                    <div class="project-content">
+                        <h3 class="project-title">Who’s the Best?</h3>
+                        <p class="project-description">Discover the most streamed song and the top-performing student.
+                            Enter
+                            the data and see who stands out!</p>
+                        <a href="https://giu-g.github.io/dx2/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="./img/thumbnails/dxd-1.png" class="project-image" alt="Logic 3">
+                    <div class="project-content">
+                        <h3 class="project-title">Word Duel</h3>
+                        <p class="project-description">Just type in two words, and discover which one wins the duel — or
+                            if
+                            it's a tie!</p>
+                        <a href="https://giu-g.github.io/dx1/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="./img/thumbnails/plate-rotation.png" class="project-image" alt="Logic 4">
+                    <div class="project-content">
+                        <h3 class="project-title">São Paulo License Plate Rotation</h3>
+                        <p class="project-description">Check São Paulo’s license plate rotation rules based on your
+                            plate
+                            number and the day of the week. </p>
+                        <a href="https://giu-g.github.io/rodizio-de-placas/" class="project-button"
+                            target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCHOOL TOPICS -->
+        <section>
+            <h2 class="section-title">School Topics</h2>
+            <p class="section-description">Projects developed for school-related content or assignments.</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./img/thumbnails/fpoo-senai.png" class="project-image" alt="School Topic">
+                    <div class="project-content">
+                        <h3 class="project-title">Attributes & Objects</h3>
+                        <p class="project-description">A website developed as part of SENAI’s FOOP studies, showcasing
+                            object-oriented programming concepts.</p>
+                        <a href="https://giu-g.github.io/fpoo/" class="project-button" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <div class="scroolingbar-container">
+        <div class="scroolingbar-text">
+            Just a little something scrolling by...
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Peek-A-Boo!
+        </div>
+    </div>
+
+    <footer>
+        <p class="contact-title">Let's get in touch.</p>
+
+        <form class="footer-form" onsubmit="sendEmail(event)">
+            <input type="email" id="emailInput" placeholder="Your email" required />
+            <button type="submit">Send</button>
+        </form>
+
+        <hr style="height:1px;border-width:0;color:gray;background-color:gray; margin-bottom: 6%;">
+
+        <div class="social-links">
+            <a href="https://github.com/giu-g" target="_blank">GitHub</a> |
+            <a href="#" target="_blank">g.schiavetto18@gmail.com</a>
+        </div>
+
+        <p>© 2025 Giulia Schiavetto's Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
