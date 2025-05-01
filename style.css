@@ -561,7 +561,7 @@ button:disabled {
   gap: 1.5rem;
   justify-content: flex-start;
   margin-bottom: 5%;
-  margin-top: -90px;
+  margin-top: -50px;
 }
 
 @media (max-width: 768px) {
